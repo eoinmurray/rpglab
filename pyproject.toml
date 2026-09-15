@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rpglab"
+version = "1.0.0"
+description = "A small persistent RPG runtime with terminal and Discord interfaces"
+requires-python = ">=3.9"
+dependencies = [
+  "cmd2>=2.5,<3",
+  "discord.py>=2.6,<3",
+  "openai>=2.26,<3",
+  "pydantic>=2.12,<3",
+  "rich>=14,<15",
+]
+
+[project.scripts]
+rpglab-discord = "rpglab.discord_bot:main"
+rpglab-cli = "rpglab.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
